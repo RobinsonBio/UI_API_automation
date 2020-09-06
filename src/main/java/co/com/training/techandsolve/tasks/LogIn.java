@@ -6,6 +6,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.matchers.statematchers.IsVisibleMatcher;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.hamcrest.Matchers;
 
 import static co.com.training.techandsolve.userinterfaces.PrincipalPageYourLogo.SIGN_IN_BUTTON;
 
@@ -22,6 +26,7 @@ public class LogIn implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(SIGN_IN_BUTTON, WebElementStateMatchers.isVisible()),
                 Click.on(SIGN_IN_BUTTON),
                 Enter.theValue(email_login).into(PrincipalPageYourLogo.LOG_IN_EMAIL),
                 Enter.theValue(password_login).into(PrincipalPageYourLogo.LOG_IN_PASSWORD),

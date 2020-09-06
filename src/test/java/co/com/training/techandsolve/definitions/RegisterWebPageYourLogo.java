@@ -29,6 +29,7 @@ import java.util.List;
 import static co.com.training.techandsolve.userinterfaces.MenuClothesYourLogo.BACK_BUTTON_HOME;
 import static co.com.training.techandsolve.userinterfaces.MenuClothesYourLogo.LISTS_OF_DRESSES;
 import static co.com.training.techandsolve.userinterfaces.PrincipalPageYourLogo.SIGN_IN_BUTTON;
+import static co.com.training.techandsolve.utils.WebConstants.URL_YOUR_LOGO_WEB_PAGE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 
@@ -45,7 +46,7 @@ public class RegisterWebPageYourLogo {
 
     @Given("^The user clicks the sign in options$")
     public void theUserClicksTheSigInOptions() {
-        OnStage.theActorInTheSpotlight().wasAbleTo(Open.url("http://automationpractice.com/"));
+        OnStage.theActorInTheSpotlight().wasAbleTo(Open.url(URL_YOUR_LOGO_WEB_PAGE));
         OnStage.theActorInTheSpotlight().wasAbleTo(
                 Click.on(SIGN_IN_BUTTON));
     }
@@ -72,6 +73,7 @@ public class RegisterWebPageYourLogo {
 
     @Given("^the user is in the principal menu of your logo page$")
     public void theUserIsInThePrincipalMenuOfYourLogoPage(List<User> lstUser) {
+        OnStage.theActorInTheSpotlight().wasAbleTo(Open.url(URL_YOUR_LOGO_WEB_PAGE));
         OnStage.theActorInTheSpotlight().wasAbleTo(
                 LogIn.toYourLogoPage(lstUser.get(0)),
                 Click.on(BACK_BUTTON_HOME),
@@ -84,8 +86,8 @@ public class RegisterWebPageYourLogo {
         OnStage.theActorInTheSpotlight().attemptsTo(ChooseTheClothes.toBuyDresses());
     }
 
-    @Then("^he will see the number of product he chose (.*)$")
-    public void heWillSeeTheNumberOfProductHeChose(String strProducts) {
+    @Then("^he will see the number of product he chose$")
+    public void heWillSeeTheNumberOfProductHeChose() {
 
         Integer Value_remember = OnStage.theActorInTheSpotlight().recall("value");
         String sumary = String.valueOf(Value_remember);

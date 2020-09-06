@@ -7,7 +7,7 @@ Feature: User is going to buy on the your logo page.
     Given The user clicks the sign in options
     When he enters all the personal information to register
       | name  | lastname | password  | email           |
-      | robin | quintero | 1234robin | rrrt1L23@gmail.com |
+      | robin | quintero | 1234robin | rrasart1L23@gmail.com |
 
     And he enters the Address information in the register form
       | address   | city     | postalCode | mobilePhone |
@@ -21,7 +21,7 @@ Feature: User is going to buy on the your logo page.
       | email_login     | password_login |
       | r1L23@gmail.com | 1234robin      |
     When he chooses the dresses to buy
-    Then he will see the number of product he chose 6 Products
+    Then he will see the number of product he chose
 
 
 
