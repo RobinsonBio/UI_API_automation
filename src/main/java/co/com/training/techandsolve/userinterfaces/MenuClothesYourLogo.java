@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 
 public class MenuClothesYourLogo {
 
+    private MenuClothesYourLogo () {}
+
     public final static Target WOMEN_BUTTON = Target.the("Button to choose women menu").located(By.xpath("//a[@class='sf-with-ul']"));
     public final static Target BACK_BUTTON_HOME = Target.the("Button to back home").located(By.xpath("//a[@class='home']"));
     public final static Target LISTS_OF_DRESSES = Target.the("Button to choose a list view of dress").locatedBy("//i[@class='icon-th-list']");

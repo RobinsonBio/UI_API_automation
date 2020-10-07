@@ -11,8 +11,6 @@ public class TheSumaryOf implements Question  {
 
          String value=  PRICES_PRODUCTS.resolveFor(actor).getText().trim().substring(0,1);
 
-        System.out.println(value);
-
         return value;
 
     }

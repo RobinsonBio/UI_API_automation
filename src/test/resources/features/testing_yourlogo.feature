@@ -7,7 +7,7 @@ Feature: User is going to buy on the your logo page.
     Given The user clicks the sign in options
     When he enters all the personal information to register
       | name  | lastname | password  | email           |
-      | robin | quintero | 1234robin | rrasart1L23@gmail.com |
+      | robin | quintero | 1234robin | mart17423@gmail.com |
 
     And he enters the Address information in the register form
       | address   | city     | postalCode | mobilePhone |

@@ -4,11 +4,13 @@ import co.com.training.techandsolve.models.NewUser;
 import co.com.training.techandsolve.userinterfaces.RegisterPageYourLogo;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.core.annotations.Step;
 
 import static co.com.training.techandsolve.userinterfaces.PrincipalPageYourLogo.CREATE_ACCOUNT_BUTTON;
 import static co.com.training.techandsolve.userinterfaces.PrincipalPageYourLogo.EMAIL_INPUT;
@@ -22,8 +24,7 @@ public class EnterTheUserInformation implements Task {
     private String email;
 
 
-
-    public EnterTheUserInformation(String name, String lastname, String password,  String email) {
+    public EnterTheUserInformation(String name, String lastname, String password, String email) {
         this.name = name;
         this.lastname = lastname;
         this.password = password;
@@ -31,6 +32,7 @@ public class EnterTheUserInformation implements Task {
 
     }
 
+    @Step("{0} enters de user information to get registered")
     @Override
     public <T extends Actor> void performAs(T actor) {
 
@@ -48,6 +50,6 @@ public class EnterTheUserInformation implements Task {
     }
 
     public static EnterTheUserInformation toYourLogo(NewUser user) {
-        return new EnterTheUserInformation(user.getName(), user.getLastname(), user.getPassword(), user.getEmail());
+        return Tasks.instrumented(EnterTheUserInformation.class, user.getName(), user.getLastname(), user.getPassword(), user.getEmail());
     }
 }

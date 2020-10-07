@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 
 public class RegisterPageYourLogo {
 
+    private RegisterPageYourLogo () {}
+
     public final static Target USER_FIRST_NAME = Target.the("Field to enter the user first name").located(By.id("customer_firstname"));
     public final static Target ADDRESS = Target.the("Field to enter the address first name").located(By.id("address1"));
     public final static Target USER_LAST_NAME = Target.the("Field to enter the user last name").located(By.id("customer_lastname"));

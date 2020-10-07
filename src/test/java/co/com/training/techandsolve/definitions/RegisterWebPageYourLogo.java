@@ -29,6 +29,7 @@ import java.util.List;
 import static co.com.training.techandsolve.userinterfaces.MenuClothesYourLogo.BACK_BUTTON_HOME;
 import static co.com.training.techandsolve.userinterfaces.MenuClothesYourLogo.LISTS_OF_DRESSES;
 import static co.com.training.techandsolve.userinterfaces.PrincipalPageYourLogo.SIGN_IN_BUTTON;
+import static co.com.training.techandsolve.userinterfaces.RegisterPageYourLogo.REGISTER_BUTTON;
 import static co.com.training.techandsolve.utils.WebConstants.URL_YOUR_LOGO_WEB_PAGE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
@@ -60,7 +61,8 @@ public class RegisterWebPageYourLogo {
     @When("^he enters the Address information in the register form$")
     public void heEntersTheEmailInTheSigInOption(List<NewAddress> lstAddress) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                EnterTheAddressInformation.toYourLogoPage(lstAddress.get(0)));
+                EnterTheAddressInformation.toYourLogoPage(lstAddress.get(0)),
+                Click.on(REGISTER_BUTTON));
     }
 
 

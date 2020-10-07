@@ -8,12 +8,6 @@ public class NewUser {
     private String password;
     private String email;
 
-    public NewUser(String name, String lastname, String password, String email) {
-        this.name = name;
-        this.lastname = lastname;
-        this.password = password;
-        this.email = email;
-    }
 
     public String getName() {
         return name;
