@@ -27,7 +27,7 @@ public class EnterTheAddressInformation implements Task {
         this.postalCode = postalCode;
         this.mobilePhone = mobilePhone;
     }
-    @Step("{0} enters de address information to get registered")
+    @Step("{0} enters the address information to get registered")
     @Override
     public <T extends Actor> void performAs(T actor) {
 

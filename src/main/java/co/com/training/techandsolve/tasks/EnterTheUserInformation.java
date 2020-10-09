@@ -32,7 +32,7 @@ public class EnterTheUserInformation implements Task {
 
     }
 
-    @Step("{0} enters de user information to get registered")
+    @Step("{0} enters the user information to get registered")
     @Override
     public <T extends Actor> void performAs(T actor) {
 

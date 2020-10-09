@@ -6,10 +6,13 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.thucydides.core.annotations.Step;
 
 import static co.com.training.techandsolve.userinterfaces.MenuClothesYourLogo.*;
 
 public class ChooseTheClothes implements Task {
+
+    @Step("{0} chooses the clothes")
     @Override
     public <T extends Actor> void performAs(T actor) {
 
@@ -24,10 +27,10 @@ public class ChooseTheClothes implements Task {
                 Click.on(CONTINUE_SHOOPING),
                 Click.on(ADD_TO_CART4),
                 Click.on(CHECKOUT_BUTTON));
-   }
+    }
 
 
-    public static ChooseTheClothes toBuyDresses(){
+    public static ChooseTheClothes toBuyDresses() {
         return new ChooseTheClothes();
     }
 }
